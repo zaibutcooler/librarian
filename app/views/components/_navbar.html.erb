@@ -1,36 +1,68 @@
-<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-  <div class="container">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+<% nav_links = [
+     { name: 'Dashboard', path: '/dashboard' },
+     { name: 'Playground', path: '/playground' }
+   ] %>
+
+
+
+<div as="nav" class="bg-white shadow-sm">
+
+          <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 justify-between">
+              <div class="flex">
+                <div class="flex flex-shrink-0 items-center">
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    class="text-gray-100"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect
+                      width="100%"
+                      height="100%"
+                      rx="16"
+                      fill="currentColor"
+                    />
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M17.6482 10.1305L15.8785 7.02583L7.02979 22.5499H10.5278L17.6482 10.1305ZM19.8798 14.0457L18.11 17.1983L19.394 19.4511H16.8453L15.1056 22.5499H24.7272L19.8798 14.0457Z"
+                      fill="black"
+                    />
+                  </svg>
+                </div>
+                <div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
+<% nav_links.each do |item| %>
+  <a
+    href="<%= item[:href] %>"
+    class="<%= pathname == item[:href] ? 'border-slate-500 text-gray-900' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300' %> inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+    aria-current="<%= pathname == item[:href] ? 'page' : '' %>"
+  >
+    <%= item[:name] %>
+  </a>
+<% end %>
+
+                </div>
+              </div>
+              <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                <div as="div" class="relative ml-3">
+                  <div>
+                    <div class="flex rounded-full bg-white text-sm focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2">
+                      <span class="sr-only">Open user menu</span>
+                      <img
+                        class="h-8 w-8 rounded-full"
+                        src='https://avatar.vercel.sh/leerob'
+                        height={32}
+                        width={32}
+                        alt='user avatar'
+                      />
+                    </div>
+                  </div>
+                 
+                </div>
+              </div>
+            </div>
+          </div>
     </div>
-  </div>
-</nav>
