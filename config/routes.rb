@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'my/index'
+  get 'my/books'
+  get 'my/reviews'
   resources :reviews
   devise_for :users
   resources :books
