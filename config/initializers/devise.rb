@@ -14,7 +14,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'a8d7329e308b7480a7f3f8aceee764566a241387ceafb7a94c7fe455ca3df54dd4207273ba67e26a9ed0660d26316d1008c0788c26f0fe0ac28464e8ae1025ba'
+  # config.secret_key = 'd43c23bef31a994893db4b4d2182fda0eeb9a7b93d659538dc62f468f14e82c1d345035df0d3187b2740e445f1eefa0060939c6825e210177e44953a669aeea7'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -24,7 +24,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.mailer_sender = Railsui.config.support_email
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -126,7 +126,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '9035fa403f5c189778136ccfde8898ab23ec1851c47052de10187ea59be9f6a4f783e7719363c7ba65def153a7f70f980d0bce046b6eaa0886b85e927ac6bb0a'
+  # config.pepper = 'fed457926e6e601f924599bac4bad378cf650a93f693f3444457a917dcd406040103aba632e6a9078f0ea5702e9af4a465cbc994a0993d626c6dba8cccedb6d7'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -310,4 +310,13 @@ Devise.setup do |config|
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
+end
+
+Rails.application.config.to_prepare do
+  Devise::SessionsController.layout "devise"
+  Devise::RegistrationsController.layout proc { |controller| user_signed_in? ? "application" : "devise" }
+  Devise::ConfirmationsController.layout "devise"
+  Devise::PasswordsController.layout "devise"
+  Devise::UnlocksController.layout "devise"
+  Devise::Mailer.helper Railsui::MailHelper
 end
