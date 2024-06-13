@@ -4,8 +4,8 @@
   <div class="bg-cover h-auto z-40 relative">
     <header class="py-4 container mx-auto px-4 text-[15px] lg:flex items-center justify-between" data-controller="dropdown">
       <div class="lg:w-auto w-full flex items-center justify-between lg:space-x-3">
-        <%= link_to (defined?(root_path) ? root_path : "#"), class: "group" do %>
-Logo
+        <%= link_to (defined?(root_path) ? root_path : "#"), class: "group font-bold text-xl text-primary-500 pb-0.5" do %>
+Librarian
         <% end %>
 
         <button class="lg:hidden block btn btn-white hover:bg-white px-3 dark:hover:bg-zinc-800" role="Mobile navigation toggle" data-action="click->dropdown#toggle click@window->dropdown#hide">
@@ -21,18 +21,18 @@ Logo
         <nav class="flex-1" role="Primary navigation">
           <ul
             class="lg:flex items-center lg:space-x-3 lg:pl-8 lg:mt-0 mt-4 font-heading text-zinc-800 lg:text-[15px] text-lg">
-            <li>
-              <%= nav_link_to "Features", "#", inactive_class: "lg:px-3 py-2 lg:inline-block block hover:bg-opacity-50 rounded hover:text-primary-600 focus:ring-4 focus:ring-zinc-50 font-normal dark:text-zinc-100 dark:hover:text-primary-500 dark:focus:ring-zinc-800", active_class: "lg:px-3 py-2 lg:inline-block block hover:bg-opacity-50 rounded hover:text-primary-600 focus:ring-4 focus:ring-zinc-50 font-normal text-primary-600 dark:text-primary-500 dark:focus:ring-zinc-800" %>
+     <li>
+              <%= nav_link_to "About", (defined?(about_path) ? about_path : "#"), inactive_class: "lg:px-3 py-2 lg:inline-block block hover:bg-opacity-50 rounded hover:text-primary-600 focus:ring-4 focus:ring-zinc-50 font-normal dark:text-zinc-100 dark:hover:text-primary-500 dark:focus:ring-zinc-800", active_class: "lg:px-3 py-2 lg:inline-block block hover:bg-opacity-50 rounded hover:text-primary-600 focus:ring-4 focus:ring-zinc-50 font-normal text-primary-600 dark:text-primary-500 dark:focus:ring-zinc-800" %>
             </li>
-            <li>
-              <%= nav_link_to "Testimonials", "#", inactive_class: "lg:px-3 py-2 lg:inline-block block hover:bg-opacity-50 rounded hover:text-primary-600 focus:ring-4 focus:ring-zinc-50 font-normal dark:text-zinc-100 dark:hover:text-primary-500 dark:focus:ring-zinc-800", active_class: "lg:px-3 py-2 lg:inline-block block hover:bg-opacity-50 rounded hover:text-primary-600 focus:ring-4 focus:ring-zinc-50 font-normal text-primary-600 dark:text-primary-500 dark:focus:ring-zinc-800" %>
-            </li>
+          
             <li>
               <%= nav_link_to "Pricing", (defined?(pricing_path) ? pricing_path : "#"), inactive_class: "lg:px-3 py-2 lg:inline-block block hover:bg-opacity-50 rounded hover:text-primary-600 focus:ring-4 focus:ring-zinc-50 font-normal dark:text-zinc-100 dark:hover:text-primary-500 dark:focus:ring-zinc-800", active_class: "lg:px-3 py-2 lg:inline-block block hover:bg-opacity-50 rounded hover:text-primary-600 focus:ring-4 focus:ring-zinc-50 font-normal text-primary-600 dark:text-primary-500 dark:focus:ring-zinc-800" %>
             </li>
-            <li>
-              <%= nav_link_to "About", (defined?(about_path) ? about_path : "#"), inactive_class: "lg:px-3 py-2 lg:inline-block block hover:bg-opacity-50 rounded hover:text-primary-600 focus:ring-4 focus:ring-zinc-50 font-normal dark:text-zinc-100 dark:hover:text-primary-500 dark:focus:ring-zinc-800", active_class: "lg:px-3 py-2 lg:inline-block block hover:bg-opacity-50 rounded hover:text-primary-600 focus:ring-4 focus:ring-zinc-50 font-normal text-primary-600 dark:text-primary-500 dark:focus:ring-zinc-800" %>
+
+              <li>
+              <%= nav_link_to "Testimonials", "#", inactive_class: "lg:px-3 py-2 lg:inline-block block hover:bg-opacity-50 rounded hover:text-primary-600 focus:ring-4 focus:ring-zinc-50 font-normal dark:text-zinc-100 dark:hover:text-primary-500 dark:focus:ring-zinc-800", active_class: "lg:px-3 py-2 lg:inline-block block hover:bg-opacity-50 rounded hover:text-primary-600 focus:ring-4 focus:ring-zinc-50 font-normal text-primary-600 dark:text-primary-500 dark:focus:ring-zinc-800" %>
             </li>
+       
           </ul>
         </nav>
 
@@ -51,9 +51,9 @@ Logo
     </header>
 
     <div class="container mx-auto px-4 lg:py-24 py-14">
-      <h1 class="md:text-5xl text-3xl tracking-tighter font-semibold font-heading text-zinc-900 dark:text-white text-center"> We leverage AI to make real estate <br class="lg:block hidden" /> investors more income</h1>
+      <h1 class="md:text-5xl text-3xl tracking-tighter font-semibold font-heading text-zinc-900 dark:text-white text-center"> The Ultimate Book Management Hub <br class="lg:block hidden" /> for Entrepreneurs</h1>
       <div class="prose prose-lg prose-zinc text-center mx-auto my-6 dark:prose-invert">
-        <p>With vacation rentals money is left on the table if you don't optimize. <br class="lg:block hidden" /> Our solutions and products give investors more say in what they earn.</p>
+        <p>Welcome to Librarian, the ultimate tool for busy Entrepreneurs. <br class="lg:block hidden" />An intuitive and comprehensive solution to manage your personal library.</p>
       </div>
 
       <div class="lg:flex justify-center items-center mt-6 lg:space-x-4 lg:space-y-0 space-y-4">
@@ -67,7 +67,7 @@ Logo
       </div>
     </div>
     <div class="container mx-auto px-4">
-      <%= image_tag "hero-image.jpg", alt: "Hero image of cabin in snow", class: "animate-fadeIn" %>
+      <%= image_tag "/images/welcome.jpg", alt: "Hero image of cabin in snow", class: "animate-fadeIn" %>
     </div>
   </div>
 <% end %>
