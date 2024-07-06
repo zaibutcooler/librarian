@@ -17,9 +17,12 @@ Rails.application.routes.draw do
 	get 'admin/calendar', to: 'page#calendar'
 	get 'admin/inbox', to: 'page#inbox'
 	get 'admin/properties', to: 'page#properties'
-	get 'admin/dashboard', to: 'page#dashboard'
+	get 'dashboard', to: 'page#dashboard'
 	get 'pricing', to: 'page#pricing'
 	get '', to: 'page#landing'
+
+
+
   if Rails.env.development? || Rails.env.test?
     mount Railsui::Engine, at: "/railsui"
   end
