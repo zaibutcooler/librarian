@@ -1,0 +1,2 @@
+class ReportMailer < ApplicationMailer
+end
