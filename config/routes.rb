@@ -17,7 +17,8 @@ Rails.application.routes.draw do
 	get 'admin/calendar', to: 'page#calendar'
 	get 'admin/inbox', to: 'page#inbox'
 	get 'admin/properties', to: 'page#properties'
-	get 'dashboard', to: 'page#dashboard'
+
+	get 'dashboard', to: 'dashboard#index'
 	get 'pricing', to: 'page#pricing'
 	get '', to: 'page#landing'
 
